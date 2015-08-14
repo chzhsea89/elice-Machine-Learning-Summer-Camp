@@ -1,0 +1,38 @@
+import statsmodels.api
+import numpy
+
+def main():
+    (N, X, Y) = read_data()
+
+    results = do_multivariate_regression(N, X, Y)
+    print(results.summary())
+
+    effective_variables = get_effective_variables(results)
+    print(effective_variables)
+
+def read_data():
+    with open("students.dat") as f:
+        lines = list(f)
+    
+    X, Y = [], []
+    for l in lines:
+        refined_line = l.split(' ')
+        Y.append(refined_line.pop())
+        X.append(refined_line)
+
+    N, X, Y = len(X) - 1, numpy.array(X[1:]).astype(float), numpy.array(Y[1:]).astype(float)
+    return (N, X, Y)
+
+def do_multivariate_regression(N, X, Y):
+    return statsmodels.api.OLS(Y, X).fit()
+
+def get_effective_variables(results):
+    return ['x'+str(n+1) for n, pval in enumerate(results.pvalues) if pval < 0.05]
+
+def print_students_data():
+    with open("students.dat") as f:
+        for line in f:
+            print(line)
+
+if __name__ == "__main__":
+    main()
