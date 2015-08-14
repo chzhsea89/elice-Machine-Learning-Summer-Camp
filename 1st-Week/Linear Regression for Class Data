@@ -21,6 +21,7 @@ def read_data():
         X.append(refined_line)
 
     N, X, Y = len(X) - 1, numpy.array(X[1:]).astype(float), numpy.array(Y[1:]).astype(float)
+    
     return (N, X, Y)
 
 def do_multivariate_regression(N, X, Y):
