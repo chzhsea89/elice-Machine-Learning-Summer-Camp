@@ -11,6 +11,10 @@ def main():
     print(effective_variables)
 
 def read_data():
+    # 1
+
+    # X must be numpy.array in (30 * 5) shape.
+    # Y must be 1-dimensional numpy.array.
     with open("students.dat") as f:
         lines = list(f)
     
@@ -24,9 +28,11 @@ def read_data():
     return (N, X, Y)
 
 def do_multivariate_regression(N, X, Y):
+    # 2
     return statsmodels.api.OLS(Y, X).fit()
 
 def get_effective_variables(results):
+    # 3
     return ['x'+str(n+1) for n, pval in enumerate(results.pvalues) if pval < 0.05]
 
 def print_students_data():
