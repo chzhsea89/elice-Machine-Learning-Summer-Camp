@@ -13,12 +13,9 @@ def get_matrix():
     return numpy.array(mat)
 
 def matrix_tutorial(A):
-    # 2
     B = A.transpose()
-    # 3
     try: C = numpy.linalg.inv(B)
     except: return "not invertible"
-    # 4
     return numpy.sum(C > 0)
 
 if __name__ == "__main__":
