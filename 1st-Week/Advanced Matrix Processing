@@ -17,6 +17,7 @@ def matrix_tutorial(A):
     B = A.transpose()
     try: C = numpy.linalg.inv(B)
     except: return "not invertible"
+    
     return numpy.sum(C > 0)
 
 if __name__ == "__main__":
