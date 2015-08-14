@@ -15,8 +15,10 @@ def create_BOW(sentence):
         except:
             bow_dict.update({w:i})
             i = i+1
+    
     match = [bow_dict[w] for w in replace_non_alphabetic_chars_to_space(sentence.lower()).split()]
     bow = [match.count(n) for n in range(len(bow_dict))]
+    
     return bow_dict, bow
 
 def replace_non_alphabetic_chars_to_space(sentence):
