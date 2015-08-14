@@ -11,11 +11,8 @@ def main():
 def flip_a_coin(prob_head):
     random_num = numpy.random.random()
 
-    # exercise
-    if random_num < prob_head:
-        return "head"
-    else:
-        return "tail"
+    if random_num < prob_head: return "head"
+    else: return "tail"
 
 def flip_multiple_times(num_flips, prob_head):
     if num_flips > 100000:
