@@ -8,6 +8,7 @@ def main():
     print(BOW)
 
 def create_BOW(sentence):
+    # Exercise
     bow_dict={}
     i=0
     for w in replace_non_alphabetic_chars_to_space(sentence.lower()).split():
