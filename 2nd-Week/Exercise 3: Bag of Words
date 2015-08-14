@@ -1,0 +1,26 @@
+import re
+
+def main():
+    sentence = input()
+    BOW_dict, BOW = create_BOW(sentence)
+
+    print(BOW_dict)
+    print(BOW)
+
+def create_BOW(sentence):
+    bow_dict={}
+    i=0
+    for w in replace_non_alphabetic_chars_to_space(sentence.lower()).split():
+        try: bow_dict[w] and len(w) >= 1
+        except:
+            bow_dict.update({w:i})
+            i = i+1
+    match = [bow_dict[w] for w in replace_non_alphabetic_chars_to_space(sentence.lower()).split()]
+    bow = [match.count(n) for n in range(len(bow_dict))]
+    return bow_dict, bow
+
+def replace_non_alphabetic_chars_to_space(sentence):
+    return re.sub(r'[^a-z]+', ' ', sentence)
+
+if __name__ == "__main__":
+    main()
