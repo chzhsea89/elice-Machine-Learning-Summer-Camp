@@ -10,6 +10,7 @@ def main():
     print(elice_utils.visualize(X, Y, results))
 
 def read_data():
+    # 1
     N = int(input().strip())
 
     X = []
@@ -24,6 +25,7 @@ def read_data():
     return (N, X, Y)
 
 def do_simple_regression(N, X, Y):
+    # 2
     results = statsmodels.api.OLS(Y, statsmodels.api.add_constant(numpy.array(X).T)).fit()
 
     return results
