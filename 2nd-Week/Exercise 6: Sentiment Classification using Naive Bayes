@@ -22,6 +22,7 @@ def main():
                                         ['Positive', 'Negative']))
 
 def naive_bayes(training1_sentence, training2_sentence, testing_sentence, alpha, prob1, prob2):
+    # Exercise
     t1m_pos = create_BOW(training1_sentence)
     t2m_neg = create_BOW(training2_sentence)
     tm = create_BOW(testing_sentence)
