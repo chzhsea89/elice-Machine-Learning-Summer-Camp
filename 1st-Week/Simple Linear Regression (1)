@@ -1,0 +1,15 @@
+import numpy
+
+def main():
+    (N, X, Y) = read_data()
+    print(N)
+    print(X)
+    print(Y)
+
+def read_data():
+    N, X, Y = input().split(" ")[0], input().split(" "), input().split(" ")
+    
+    return (N, X, Y)
+
+if __name__ == "__main__":
+    main()
