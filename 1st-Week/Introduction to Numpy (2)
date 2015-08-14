@@ -9,8 +9,7 @@ def matrix_tutorial():
     B = numpy.concatenate((B, [[2, 2], [5, 3]]), axis=0)
     C = numpy.split(B, 2, axis=0)[0]
     D = numpy.split(B, 2, axis=0)[1]
-    E = numpy.concatenate((C, D), axis=1)
-    return E
+    return numpy.concatenate((C, D), axis=1)
 
 if __name__ == "__main__":
     main()
