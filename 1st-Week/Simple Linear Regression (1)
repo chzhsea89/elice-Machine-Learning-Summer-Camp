@@ -7,9 +7,7 @@ def main():
     print(Y)
 
 def read_data():
-    # 1
     N, X, Y = input().split(" ")[0], input().split(" "), input().split(" ")
-    # 2
     return (N, X, Y)
 
 if __name__ == "__main__":
