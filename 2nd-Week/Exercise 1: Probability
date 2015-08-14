@@ -11,6 +11,7 @@ def main():
 def flip_a_coin(prob_head):
     random_num = numpy.random.random()
 
+    # exercise
     if random_num < prob_head:
         return "head"
     else:
