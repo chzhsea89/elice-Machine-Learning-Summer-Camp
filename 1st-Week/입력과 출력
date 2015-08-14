@@ -2,11 +2,12 @@ def main():
     r = input()
     g = input()
     b = input()
-    print(rgb2hex(r, g, b))
 
+    print(rgb2hex(r, g, b))
 
 def rgb2hex(r, g, b):
     hex_color = "#"+"".join(["%02X" % int(e) for e in [r, g, b]])
+
     return hex_color
 
 if __name__ == "__main__":
