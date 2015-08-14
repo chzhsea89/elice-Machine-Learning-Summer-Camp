@@ -23,10 +23,14 @@ def main():
 def naive_bayes(training1_sentence, training2_sentence, testing_sentence, alpha, prob1, prob2):
     t1m_pos = create_BOW(training1_sentence)
     t2m_neg = create_BOW(training2_sentence)
+    
     tm = create_BOW(testing_sentence)
+    
     lh1 = calculate_doc_prob(t1m_pos, tm, alpha)
     lh2 = calculate_doc_prob(t2m_neg, tm, alpha)
+    
     classify1, classify2 = math.log(prob1) + lh1, math.log(prob2) + lh2
+    
     return normalize_log_prob(classify1, classify2)
 
 def read_text_data(directory):
