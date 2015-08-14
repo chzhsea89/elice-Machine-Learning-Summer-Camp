@@ -16,6 +16,7 @@ def main():
     print(calculate_doc_prob(training_model, testing_model, alpha))
 
 def calculate_doc_prob(training_model, testing_model, alpha):
+    # Implement likelihood function here...
     logprob = 0
     for w in testing_model[0]:
         den = (sum(training_model[1]) + len(training_model[1]) * alpha)
