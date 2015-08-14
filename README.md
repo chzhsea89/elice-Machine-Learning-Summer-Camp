@@ -1,6 +1,6 @@
-# elice-Machine-Learning-Summer-Camp
+# 'elice' Machine Learning Summer Camp
 
-## This is my own version of solution code for elice Machine Learning Summer Camp (Aug. 2015)
+## This is my own version of solution code for 'elice' Machine Learning Summer Camp (Aug. 2015)
 
 ### Week 1. 기계학습 및 온라인 Python 프로그래밍 기초
 - 온라인 프로그래밍 및 디버깅
