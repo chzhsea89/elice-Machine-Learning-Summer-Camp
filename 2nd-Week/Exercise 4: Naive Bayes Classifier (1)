@@ -17,8 +17,10 @@ def calculate_doc_prob(training_model, testing_model, alpha):
     for w in testing_model[0]:
         den = (sum(training_model[1]) + len(training_model[1]) * alpha)
         dup = testing_model[1][testing_model[0][w]]
+        
         try: logprob += math.log((training_model[1][training_model[0][w]] + alpha) / den) * dup
         except: logprob += math.log(alpha / den) * dup
+    
     return logprob
 
 def create_BOW(sentence):
